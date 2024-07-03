@@ -1,11 +1,18 @@
-import React from 'react'
+import Header from "./Header/Header";
+import SideBar from "./SideBar/SideBar";
 
-type Props = {}
+type Props = {
+  children: React.ReactNode;
+};
 
-const Layout = (props: Props) => {
+const Layout = ({ children }: Props) => {
   return (
-    <div>Layout</div>
-  )
-}
+    <div>
+      <Header />
+      <SideBar />
+      {children}
+    </div>
+  );
+};
 
-export default Layout
+export default Layout;
