@@ -1,1 +1,0 @@
-const amal = "amal"

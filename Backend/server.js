@@ -5,25 +5,30 @@ const express = require('express')
 
 const cors = require('cors')
 
-require('./database/connection/connection')
+
 //create server app using express
 const server = express()
 
+const router = require("./router/organizationRouter")
+
+require('./database/connection/connection')
 //use cors and express.json() to your server app  (application specific middleware)
 server.use(cors())
 
 server.use(express.json())
 
+server.use(router)
+
 //create port to  listen your server app
-port = process.env.PORT
+PORT = 3000
 
 //api test
 server.get('/',(req,res)=>{
-    res.status(200).json("BillBIZZ server started")
+    res.status(200).json("Bill BIZZ server started")
 })
 
 //Run server app in the specified port
-server.listen(port,()=>{
-    console.log(`BillBIZZ server started at port : ${port}`);
+server.listen(PORT,()=>{
+    console.log(`BillBIZZ server started at port : ${PORT}`);
 })
 
