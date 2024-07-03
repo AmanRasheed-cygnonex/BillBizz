@@ -1,8 +1,9 @@
-
 type Props = {};
 
 const SideBar = ({}: Props) => {
-  return <div>SideBar</div>;
+  return <aside className="bg-black w-8">
+    
+  </aside>;
 };
 
 export default SideBar;
